@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-image: url('2.jpeg');
+                background-size: cover;
+                
+            }
+        </style>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>A Finder 오신걸 환영합니다</title>
+        <link href = 'style.css' rel = 'stylesheet' type = 'text/css' />
+        
+        <script type="text/javascript">
+            function check(){
+             if(document.search.keyWord.value==''){
+              alert('검색어를 입력하세요'); 
+              document.search.keyWord.focus();
+              return false; 
+              
+             }
+             
+             
+            }
+           
+        </script>
+
+        <style>
+            
+            .nav {
+                height: 70px;
+                display: flex;
+            }
+
+            .nav-right-items{
+                display: flex;
+                margin-left: auto;
+                margin-top: -3px;
+                color: rgba(14, 0, 0, 0.541);
+            }
+
+            .nav-item{
+                margin-left: 50px;
+                
+            }
+        
+
+            .form{
+                display: flex;
+            }
+            .register-form{
+                color: #f3f3f3;
+                background-color: transparent;
+                background-image: none;
+                font-size: 14px;
+                text-decoration: none;
+                margin-top: 18px;
+                margin: 20px;
+            }
+           
+            .login-form{
+                color: #f3f3f3;
+                background-color: transparent;
+                background-image: none;
+                font-size: 14px;
+                text-decoration: none;
+                margin-top: 18px;
+                margin-right: 15px;
+                cursor: pointer;
+            }
+
+
+            .company-name{
+                margin-top: -16px;
+            }
+            .company-name-href{
+                color:white;
+                font-size: 35px;
+                text-decoration: none;
+                margin: auto;
+                margin-left: 100px;
+        
+            }
+
+            .nav-item-href{
+                color:white;
+                font-size: 16px;
+                text-decoration: none;
+                margin: -350px;
+                margin-left: -100px; 
+                margin-right: 103px;
+            }
+            .search-bar{
+                margin-top: 20px;
+                margin-left: 40px;
+            }
+            .search{
+                display: flex;
+                margin-left: auto;
+            }
+
+        
+
+            .main1{
+                width: 100px;
+                margin: auto;
+                margin-top: 480px;
+            }
+            
+
+
+            .title{
+                text-align: center;
+                font-size: 3.5rem;
+                font-weight: bold;
+            }
+           
+           
+            .main3{
+        width: 1400px;
+        height: 400px;
+        background-color: white;
+        border: 3px solid rgb(89, 108, 114);
+        margin-top : 120px;
+        margin: auto;
+        border-radius: 0px
+    }
+            .main2{
+                width: 1000px;
+                margin: auto;
+                margin-top: 80px;
+            }
+            .prices{
+                display: flex;
+            }
+            .price-item{
+                width: 300px;
+                height: 350px;
+                border: 1px solid black;
+                margin: 5px;
+                margin-top: 50px;
+                border-radius: 4px;
+                text-align: center;
+            }
+            .price-item-title{
+                font-size: 1.5rem;
+                background: rgba(0,0,0,.10);
+                text-align: center;
+                height: 53px;
+                line-height: 53px;
+                border-bottom: 1px solid black;
+            }
+            .price-item-price{
+                font-size: 1.5rem;
+                font-weight: bold;
+                padding: 20px;
+            }
+            .price-item-button{
+                color: #007bff;
+                background-color: transparent;
+                background-image: none;
+                border-color: #007bff;
+                padding: .5rem 1rem;
+                font-size: 1.25rem;
+                line-height: 1.5;
+                border-radius: .3rem;
+                margin-top: 30px;
+            }
+            .price-item-button-active{
+                background-color: #007bff;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>  
+
+        <div class = "nav">
+            <div class = "company-name">
+                <h5><a class = 'company-name-href' href='default.html' title='A Finder'>A Finder</a></h5>
+            </div>
+            
+            <div class="nav-right-items"> 
+                <div class = "nav-item"><h4><a class = 'nav-item-href' href = 'A Finder소개.html' title = 'Company'>COMPANY</a></h4></div>
+                <div class = "nav-item"><h4><a class = 'nav-item-href'  title = '|'>|</a></h4></div>
+                <div class = "nav-item"><h4><a class = 'nav-item-href' href = '프로그램안내.html' title = 'Products'>PRODUCTS</a></h4></div>
+                <div class = "nav-item"><h4><a class = 'nav-item-href'  title = '|'>|</a></h4></div>
+                <div class = "nav-item"><h4><a class = 'nav-item-href' href = '입학안내.html' title = 'Solution'>SOLUTION</a></h4></div>
+                <div class = "nav-item"><h4><a class = 'nav-item-href'  title = '|'>|</a></h4></div>
+                <div class = "nav-item"><h4><a class = 'nav-item-href' href = '캠퍼스찾기.html' title = 'Support'>SUPPORT</a></h4></div>
+            </div>    
+            <div class = "form">
+                <div class = "register"><h7><a class = 'register-form' href = 'register.html' title = 'register'>sign-in</a></h7></div>
+                <div class = "login"><h7><a class = 'login-form' href = 'login.html' title = 'Login'>log-in</a></h7></div>
+            </div>
+        </div>       
+
+       
+ 
+
+        <div class = "main1">
+        </div>
+    </div>
+    <div style="text-align : center;">
+        <a href="과목별.html"><img width='190' src="종합_서브.png"></a>
+        <a href="국어.html"><img width='220' src="국어_메인.png"></a>
+        <a href="영어.html"><img width='190' src="영어_서브.png"></a>
+        <a href="수학.html"><img width='190' src="수학_서브.png"></a>
+        <a href="기타.html"><img width='190' src="기타_서브.png"></a>
+    </div>
+    <div class = "main3"></div>
+        
+    </body>
+</html>
