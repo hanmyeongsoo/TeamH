@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>A Finder 오신걸 환영합니다</title>
+
+	<style>
+
+		* {padding:0;margin:0; color: black; text-decoration: none;}
+		
+		header {width:100%;background:#f5f5f5;position:relative;z-index:10;}
+		.header-list {width:1200px;margin:0 auto;font-size:0;padding:15px 0;}
+		.header-list > li {font-size:12px; display:inline-block;vertical-align:middle;}
+		.header-list > li:nth-child(1) {font-size:20px;width:200px;}
+		.header-list > li:nth-child(2) {width:calc(100% - 250px);}
+		.header-list > li:nth-child(3) {width:50px;}
+		.header-list > li > div {width:auto;}
+		
+		
+		.menu-ul {font-size:0;}
+		.menu-ul > li {font-size:12px;display:inline-block;vertical-align:middle;}
+		.menu-ul > li > a {color: black; text-decoration: none; display:block;width:auto;padding:15px;}
+		
+		
+		input[id="menuicon"] {display:none;}
+		input[id="menuicon"] + label {display:block;position:relative;width:100%;height:40px;cursor:pointer;}
+		input[id="menuicon"] + label span {display:block;position:absolute;width:100%;height:3px;border-radius:30px;background:#666;transition:all .35s;}
+		input[id="menuicon"] + label span:nth-child(1) {top:10%;}
+		input[id="menuicon"] + label span:nth-child(2) {top:50%;transform:translateY(-50%);} /* 비슷하게 사용할 수 있는 style top:calc(50% - 2.5px); margin-top:-2.5px;*/
+		input[id="menuicon"] + label span:nth-child(3) {bottom:10%;}
+		input[id="menuicon"]:checked + label {z-index:2;}
+		input[id="menuicon"]:checked + label span:nth-child(1) {top:50%;transform:translateY(-50%) rotate(45deg);}
+		input[id="menuicon"]:checked + label span:nth-child(2) {opacity:0;}
+		input[id="menuicon"]:checked + label span:nth-child(3) {bottom:50%;transform:translateY(50%) rotate(-45deg);}
+		div[class="sidebar"] {width:100%;height:0px;background: rgba(94, 223, 201, 0.418);position:fixed;top:76px;left:0;z-index:1;transition:all .35s;overflow:hidden;}
+		input[id="menuicon"]:checked + label + div {height:200px;}
+		
+		.sitemap-ul {font-size:0;width:1000px; margin:15px auto;text-align:center;}
+		.sitemap-ul > li {margin-top: 20px; font-size:12px;display:inline-block;vertical-align:top;width:20%;}
+		
+        .form {margin:15px auto; margin-left: 1350px; display: flex;}
+		.register-form {color: black; background-color: transparent; background-image: none; font-size: 14px; text-decoration: none; margin-top: 18px; margin: 20px;} 
+        .login-form {color: black; background-color: transparent; background-image: none; font-size: 14px; text-decoration: none; margin-top: 18px; margin-right: 15px; cursor: pointer;}
+        
+        </style>
+		
+
+	<style>
+	/* 브라우저 마진과 패딩 리셋 */
+	* {margin:0;padding:0;}
+
+	/* INPUT 가리기 */
+	.section input[id*="slide"] {display:none;}
+	
+	/* 슬라이드 영역 - max-width 크기를 조절해주면 됩니다*/
+	.section .slidewrap {max-width:700px;margin:0 auto; margin-top: 100px; overflow:hidden;position:relative;}
+	.section .slidelist {white-space:nowrap;font-size:0;}
+	.section .slidelist > li {display:inline-block;vertical-align:middle;width:100%;transition:all .5s;}
+	.section .slidelist > li > a {display:block;position:relative;}
+	.section .slidelist > li > a img {width:100%;}
+
+
+	/* 좌우로 넘기는 LABEL버튼에 대한 스타일 */
+	.section .slide-control {position:absolute;top:0;left:0;z-index:10;width:100%;height:100%;}
+	.section .slide-control label {position:absolute;z-index:1;top:50%;transform:translateY(-50%);padding:50px;cursor:pointer;}
+	.section .slide-control .left {left:30px;background:url('./img/left.png') center center / 100% no-repeat;}
+	.section .slide-control .right {right:30px;background:url('./img/right.png') center center / 100% no-repeat;}
+	.section .slide-control [class*="control"] {display:none;}
+
+	/* INPUT이 체크되면 변화값이 li까지 전달되는 스타일 */
+	.section [id="slide01"]:checked ~ .slidewrap .slidelist > li {transform:translateX(0%);}
+	.section [id="slide02"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-100%);}
+	.section [id="slide03"]:checked ~ .slidewrap .slidelist > li {transform:translateX(-200%);}
+	
+	/*  INPUT이 체크되면 변화값이 좌우 슬라이드 버튼을 담고 있는 div 까지 전달되는 스타일 */
+	.section [id="slide01"]:checked ~ .slidewrap .control01 {display:block;}
+	.section [id="slide02"]:checked ~ .slidewrap .control02 {display:block;}
+	.section [id="slide03"]:checked ~ .slidewrap .control03 {display:block;}
+	</style>
+</head>
+<body>
+
+	<header>
+		<ul class="header-list">
+			<li><div><a href='/'>A Finder</a></div></li>
+			<li>
+				<div>
+					<ul class="menu-ul">
+						<li><a href="#">COMPANY</a></li>
+						<li><a href="#">PRODUCT</a></li>
+						<li><a href="#">SOLUTION</a></li>
+						<li><a href="#">SUPPORT</a></li>
+						
+					</ul>
+				</div>
+			</li>
+			
+			
+			<li>    
+					<input type="checkbox" id="menuicon">
+					<label for="menuicon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</label>
+					<div class="sidebar">
+						<ul class="sitemap-ul">
+							<li><a href="#"><h3>과목별</h3></a>
+								<ul>
+                                    <li><a href="종.html">종합</a></li>
+                                    <li><a href="국.html">국어</a></li>
+									<li><a href="수.html">수학</a></li>
+									<li><a href="영.html">영어</a></li>
+									<li><a href="기.html">기타</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><h3>지역별</h3></a>
+								<ul>
+									<li><a href="#">서울</a></li>
+									<li><a href="#">인천</a></li>
+									<li><a href="#">경기도</a></li>
+									<li><a href="#">대구</a></li>
+									<li><a href="#">부산</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><h3>중학교</h3></a>
+								<ul>
+									<li><a href="#">1학년</a></li>
+									<li><a href="#">2학년</a></li>
+									<li><a href="#">3학년</a></li>
+								
+								</ul>
+							</li>
+							<li><a href="#"><h3>고등학교</h3></a>
+								<ul>
+									<li><a href="#">1학년</a></li>
+									<li><a href="#">2학년</a></li>
+									<li><a href="#">3학년</a></li>
+								
+								</ul>
+							</li>
+							
+							
+						</ul>
+					</div>			
+				</div>
+			</li>
+		</ul>
+	</header>
+	
+    <div class = "form">
+        <div class = "register"><h7><a class = 'register-form' href = '/register' title = 'register'>Cart</a></h7></div>
+        <div class = "login"><h7><a class = 'login-form' href = '/login' title = 'Login'>Logout</a></h7></div>
+    </div>	
+
+<div class="section">
+	<input type="radio" name="slide" id="slide01" checked>
+	<input type="radio" name="slide" id="slide02">
+	<input type="radio" name="slide" id="slide03">
+	<div class="slidewrap">
+		<ul class="slidelist">
+			<li>
+				<a>
+					<img src="./img/슬라이드1.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="./img/슬라이드2.png">
+				</a>
+			</li>
+			<li>
+				<a>
+					<img src="./img/슬라이드3.png">
+				</a>
+			</li>
+		</ul>
+
+		<div class="slide-control">
+			<div class="control01">
+				<label for="slide03" class="left"></label>
+				<label for="slide02" class="right"></label>
+			</div>
+			<div class="control02">
+				<label for="slide01" class="left"></label>
+				<label for="slide03" class="right"></label>
+			</div>
+			<div class="control03">
+				<label for="slide02" class="left"></label>
+				<label for="slide01" class="right"></label>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+
